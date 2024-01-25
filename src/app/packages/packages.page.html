@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Packages</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+  <ion-header>
+    <ion-card-header>
+      <ion-title size="large">Packages available</ion-title>
+      </ion-card-header>
+  </ion-header>
+
+  <ion-card-content>
+    <p><strong>id:</strong> {{customerData?.id}}</p>
+    <p><strong>Tracking:</strong> {{customerData?.tracking}}</p>
+    <p><strong>Weight:</strong> {{customerData?.weight}}</p>
+    <p><strong>Description:</strong> {{customerData?.description}}</p>
+  </ion-card-content>
+  </ion-card>
+</ion-content>

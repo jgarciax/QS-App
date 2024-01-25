@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Perfil del Cliente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información del Cliente</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Nombre:</strong> {{customerData?.name}}</p>
+      <p><strong>Apellido:</strong> {{customerData?.surname}}</p>
+      <p><strong>Código:</strong> {{customerData?.code}}</p>
+      <p><strong>Email:</strong> {{customerData?.email}}</p>
+      <p><strong>Teléfono:</strong> {{customerData?.phone}}</p>
+
+      <ion-button expand="full" routerLink="/tab2">Editar mi perfil</ion-button>
+      <ion-button expand="full" routerLink="/tab3">Cambiar mi Contraseña</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

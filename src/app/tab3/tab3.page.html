@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Actualizar mi Contraseña
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="updatePassword()">
+  <ion-item>
+    <ion-label>Enter old Password</ion-label>
+    <ion-input [(ngModel)]="updateData.before" name="before" type="Password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Enter new Password</ion-label>
+      <ion-input [(ngModel)]="updateData.after" name="after" type="password"></ion-input>
+  </ion-item>
+  <ion-button expand="full" type="submit">Actualizar Contraseña</ion-button>
+</form>
+
+  <app-explore-container name="Tab 3 page"></app-explore-container>
+</ion-content>

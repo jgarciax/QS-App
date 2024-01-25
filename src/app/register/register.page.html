@@ -1,0 +1,27 @@
+<form (ngSubmit)="registerCustomer()">
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input [(ngModel)]="customerData.name" name="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Surname</ion-label>
+    <ion-input [(ngModel)]="customerData.surname" name="surname"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Code</ion-label>
+    <ion-input [(ngModel)]="customerData.code" name="code"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input [(ngModel)]="customerData.email" name="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Phone</ion-label>
+    <ion-input [(ngModel)]="customerData.phone" name="phone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Password</ion-label>
+    <ion-input [(ngModel)]="customerData.password" name="password" type="password"></ion-input>
+  </ion-item>
+  <ion-button expand="full" type="submit">Register</ion-button>
+</form>
