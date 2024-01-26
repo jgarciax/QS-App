@@ -1,15 +1,20 @@
-<form (ngSubmit)="loginCustomer()">
-  <ion-item>
-    <ion-label>Email</ion-label>
-    <ion-input [(ngModel)]="customerData.email" name="email"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Password</ion-label>
-    <ion-input [(ngModel)]="customerData.password" name="password" type="password"></ion-input>
-  </ion-item>
-  <ion-button expand="full" type="submit">Login</ion-button>
+<ion-content class="mi-pagina">
+  <img class="log" src="/assets/icon/logo-quick.png" alt="">
+  <form class="login-form" (ngSubmit)="loginCustomer()">
+    <ion-item class="login-item">
+      <ion-label>Email</ion-label>
+      <ion-input [(ngModel)]="customerData.email" name="email"></ion-input>
+    </ion-item>
+    
+    <ion-item class="login-item">
+      <ion-label class="login-item">Password</ion-label>
+      <ion-input [(ngModel)]="customerData.password" name="password" type="password"></ion-input>
+    </ion-item>
+    <ion-button class="login-button" type="submit">Login</ion-button>
 
-  <p>¿No tienes una cuenta?</p>
-  <ion-button expand="full" routerLink="/register">Regístrate</ion-button>
-</form>
-s
+    <p class="register-prompt">¿No tienes una cuenta?</p>
+    <ion-button class="register-button" routerLink="/register">Regístrate</ion-button>
+
+  </form>
+
+</ion-content>

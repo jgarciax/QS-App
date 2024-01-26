@@ -8,6 +8,7 @@ import { CustomerService } from '../customer.service'; // Asegúrate de importar
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage {
+  alertButtons = ['Action'];
   customerData = {
     name: '',
     surname: '',
