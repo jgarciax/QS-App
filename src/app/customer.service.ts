@@ -7,17 +7,24 @@ interface CustomerData {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CustomerService {
   private baseUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getCustomers() {
     return this.http.get(`${this.baseUrl}/customer`);
   }
-  registerCustomer(customerData: { name: string, surname: string, code: string, email: string, phone: string, password: string }) {
+  registerCustomer(customerData: {
+    name: string;
+    surname: string;
+    code: string;
+    email: string;
+    phone: string;
+    password: string;
+  }) {
     return this.http.post(`${this.baseUrl}/customer/register`, customerData);
   }
 
@@ -38,20 +45,40 @@ export class CustomerService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.get(`${this.baseUrl}/customer/getInfo`, { headers });
   }
-  updateProfile(updatedData: { name: string, surname: string, code: string, email: string, phone: string }) {
+  updateProfile(updatedData: {
+    name: string;
+    surname: string;
+    code: string;
+    email: string;
+    phone: string;
+  }) {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.put(`${this.baseUrl}/customer/updateProfile`, updatedData, { headers });
+    return this.http.put(
+      `${this.baseUrl}/customer/updateProfile`,
+      updatedData,
+      { headers }
+    );
   }
-  updatePassword(updateData: {before: string, after: string}){
+  updatePassword(updateData: { before: string; after: string }) {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Autorization', `Bearer ${token}`);
-    return this.http.put(`${this.baseUrl}/customer/updatePassword`, updateData, {headers});
+    return this.http.put(
+      `${this.baseUrl}/customer/updatePassword`,
+      updateData,
+      { headers }
+    );
   }
   getPackages() {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get(`${this.baseUrl}/customer/getPackages`, {headers});
+    return this.http.get(`${this.baseUrl}/customer/getPackages`, { headers });
   }
-  
+  deleteProfile() {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('/Authorization', `Bearer ${token}`);
+    return this.http.delete(`${this.baseUrl}/customer/deleteProfile`, {
+      headers,
+    });
+  }
 }
