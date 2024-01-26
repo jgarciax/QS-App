@@ -7,6 +7,7 @@
 </ion-header>
 
 <ion-content>
+  
   <form (ngSubmit)="updateProfile()">
     <ion-item>
       <ion-label>Nombre</ion-label>
@@ -28,6 +29,14 @@
       <ion-label>Teléfono</ion-label>
       <ion-input [(ngModel)]="updateData.phone" name="phone"></ion-input>
     </ion-item>
-    <ion-button expand="full" type="submit">Actualizar Perfil</ion-button>
+    <ion-button id="present-alert" expand="full" type="submit">Actualizar Perfil</ion-button>
+    <ion-alert
+    trigger="present-alert"
+    header="Actualizado!"
+    message="Perfil Actualizado!✅"
+    [buttons]="alertButtons"
+  ></ion-alert>
   </form>
+  
 </ion-content>
+

@@ -1,1 +1,61 @@
- 
+ /* Estilos para pantallas de ordenador */
+ion-header {
+    background: #635875; /* Ajusta según sea necesario */
+}
+
+ion-toolbar {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos a los extremos */
+}
+
+ion-content {
+    --background: none;
+    background: url('/assets/icon/backround.jpg');
+    min-height: 100vh;
+}
+
+ion-card {
+    background: #635875; /* Ajusta según sea necesario */
+    margin: 15%; /* Ajusta según sea necesario */
+    padding: 30px;
+}
+
+ion-card-header {
+    text-align: center; /* Centra el título */
+}
+
+ion-card-content p {
+    margin-bottom: 10px;
+}
+
+/* Estilos para pantallas de dispositivos móviles */
+@media screen and (max-width: 1000px) {
+    ion-header {
+        background: #635875; /* Ajusta según sea necesario */
+    }
+
+    ion-toolbar {
+        display: flex;
+        justify-content: space-between; /* Alinea los elementos a los extremos */
+    }
+
+    ion-content {
+        --background: none;
+        background: url('/assets/icon/backround.jpg');
+        min-height: 100vh;
+    }
+
+    ion-card {
+        background: #635875; /* Ajusta según sea necesario */
+        margin: 10%; /* Ajusta según sea necesario */
+        padding: 30px;
+    }
+
+    ion-card-header {
+        text-align: center; /* Centra el título */
+    }
+
+    ion-card-content p {
+        margin-bottom: 10px;
+    }
+}

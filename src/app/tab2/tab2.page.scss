@@ -1,0 +1,75 @@
+/* Estilos para pantallas de ordenador */
+ion-header {
+    background: #635875; /* Ajusta según sea necesario */
+}
+
+ion-toolbar {
+    display: flex;
+    justify-content: center; /* Centra el título */
+}
+
+ion-content {
+    --background: none;
+    background: url('/assets/icon/backround.jpg');
+    min-height: 100vh;
+}
+
+form {
+    background: #635875; /* Ajusta según sea necesario */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15%; /* Ajusta según sea necesario */
+    width: 100vh;
+    height: 60%; /* Ajusta según sea necesario */
+    padding: 30px;
+}
+
+ion-item {
+    margin-bottom: 10px;
+}
+
+ion-button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Estilos para pantallas de dispositivos móviles */
+@media screen and (max-width: 1000px) {
+    ion-header {
+        background: #635875; /* Ajusta según sea necesario */
+    }
+
+    ion-toolbar {
+        display: flex;
+        justify-content: center; /* Centra el título */
+    }
+
+    ion-content {
+        --background: none;
+        background: url('/assets/icon/backround.jpg');
+        min-height: 100vh;
+    }
+
+    form {
+        background: #635875; /* Ajusta según sea necesario */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50%;
+        width: 100%;
+        height: 50%;
+        padding: 30px;
+    }
+
+    ion-item {
+        margin-bottom: 10px;
+    }
+
+    ion-button {
+        width: 100%;
+        margin-top: 20px;
+    }
+}

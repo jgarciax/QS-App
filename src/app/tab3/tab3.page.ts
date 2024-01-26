@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  alertButtons = ['Action'];
   updateData: any = {
     before: "",
     after: ""

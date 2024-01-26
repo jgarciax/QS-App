@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  alertButtons = ['Action'];
   updateData: any = {
     name: '',
     surname: '',
