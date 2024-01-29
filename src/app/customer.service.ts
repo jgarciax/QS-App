@@ -76,7 +76,7 @@ export class CustomerService {
   }
   deleteProfile() {
     const token = this.getToken();
-    const headers = new HttpHeaders().set('/Authorization', `Bearer ${token}`);
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.delete(`${this.baseUrl}/customer/deleteProfile`, {
       headers,
     });

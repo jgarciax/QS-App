@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  alertButtons = ['Action'];
+  customerData: any;
+  alertButtons = ['Action']; //componnent allert button from ionic
   updateData: any = {
     name: '',
     surname: '',
@@ -32,4 +33,19 @@ export class Tab2Page {
       }
     );
   }
+  
+  ngOnInit() {
+    this.customerService.getCustomerInfo().subscribe(
+      (data) => {
+        this.customerData = data;
+        this.updateData = { ...data }; // Esto copia los datos del cliente a updateData
+        console.log('Datos obtenidos!')
+      },
+      (error) => {
+        console.error('Error:', error);
+      }
+    );
+  }
+  
+
 }

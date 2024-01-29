@@ -7,8 +7,32 @@ import { Router } from '@angular/router';
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
 })
+
 export class ProfilePage {
   customerData: any;
+  
+  public alertButtons = [
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      handler: () => {
+        console.log('Alert canceled');
+      },
+    },
+    {
+      text: 'OK',
+      role: 'confirm',
+      handler: () => {
+        console.log('Alert confirmed');
+        this.deleteProfile()
+      },
+    },
+  ];
+
+  setResult(ev: any) {
+    console.log(`Dismissed with role: ${ev.detail.role}`);
+  }
+  
 
   constructor(private customerService: CustomerService, private router: Router) {
     this.getCustomerInfo();
