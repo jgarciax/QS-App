@@ -1,7 +1,7 @@
 /* Estilos para pantallas de ordenador */
 ion-content.mi-pagina {
     --background: none;
-    background: url('/assets/icon/backround.jpg');
+    background: url('/assets/icon/fond_2.jpeg');
     min-height: 100vh;
 }
 
@@ -37,7 +37,7 @@ ion-button {
 @media screen and (max-width: 1000px) {
     ion-content.mi-pagina {
         --background: none;
-        background: url('/assets/icon/backround.jpg');
+        background: url('/assets/icon/fond_2.jpeg');
         min-height: 100vh;
     }
 

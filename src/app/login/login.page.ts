@@ -8,6 +8,15 @@ import { CustomerService } from '../customer.service'; // Asegúrate de importar
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
+
+  isAlertOpen = false;
+  alertButtons = ['Action'];
+
+  setOpen(isOpen: boolean) {
+    this.isAlertOpen = isOpen;
+  }
+
+
   customerData = {
     email: '',
     password: ''
@@ -25,12 +34,14 @@ export class LoginPage {
           this.router.navigateByUrl('/tab1');
           console.log('Token obtenido')
         } else {
+          this.isAlertOpen = true;
           console.error('Error: No se recibió el token');
 
         }
       },
       (error) => {
         console.error('Error:', error);
+        this.isAlertOpen = true;
       }
     );
   }

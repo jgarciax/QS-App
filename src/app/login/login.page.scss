@@ -43,7 +43,7 @@ ion-content.mi-pagina {
     ion-content.mi-pagina {
         --background: none;
         background-image: url('/assets/icon/fond.png');
-        background-size: cover;
+        background-size: cover; //images completed!!!
         min-height: 100vh;
     }
 
@@ -55,7 +55,7 @@ ion-content.mi-pagina {
     }
 
     .login-form {
-        background: #635875;
+        background: rgba(250, 247, 255, 0.5); /* El último valor es la opacidad.*/
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -65,9 +65,13 @@ ion-content.mi-pagina {
         height: 50%;
         padding: 30px;
     }
+    
 
     .login-item {
         margin-bottom: 10px;
+        width: 35vh;
+        height: 7vh;
+        
     }
 
     .login-button, .register-button {

@@ -1,5 +1,19 @@
  /* Estilos para pantallas de ordenador */
-ion-header {
+ ion-menu::part(backdrop) {
+    background-color: rgb(0, 0, 0); //sombra 
+  }
+  
+  ion-menu-button {
+    color: aliceblue;
+  }
+
+  ion-menu::part(container) {
+    border-radius: 0 20px 20px 0;
+  
+    box-shadow: 4px 0px 16px rgb(255, 255, 255); //efecto al abrir el menu
+  }
+
+ ion-header {
     background: #635875; /* Ajusta según sea necesario */
 }
 
@@ -31,24 +45,47 @@ ion-card-content p {
 /* Estilos para pantallas de dispositivos móviles */
 @media screen and (max-width: 1000px) {
     ion-header {
-        background: #635875; /* Ajusta según sea necesario */
+        background: #af1f0c; /* Ajusta según sea necesario */
     }
 
     ion-toolbar {
+        color: #F5A9BC;
         display: flex;
         justify-content: space-between; /* Alinea los elementos a los extremos */
     }
 
+    ion-img{
+        height: 10vh;
+        margin-top: 2vh;
+        width: 75vh;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+
     ion-content {
         --background: none;
-        background: url('/assets/icon/backround.jpg');
+        background: url('/assets/icon/fond_2.jpeg');
+        background-size:initial;
         min-height: 100vh;
     }
 
+    ion-title{
+        font-family: monospace;
+        color: rgb(198, 205, 212);
+    }
+
+    p{
+        font-family: monospace;
+        color: aliceblue;
+    }
+
     ion-card {
-        background: #635875; /* Ajusta según sea necesario */
+        background: #af1f0c; /* Ajusta según sea necesario */
         margin: 10%; /* Ajusta según sea necesario */
         padding: 30px;
+        box-shadow: 2px 2px 2px 1px rgba(93, 89, 89, 0.8); //color-found packages
+        opacity: 0.7;
+
     }
 
     ion-card-header {
