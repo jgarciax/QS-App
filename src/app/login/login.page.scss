@@ -1,7 +1,7 @@
 /* Estilos para pantallas de ordenador */
 ion-content.mi-pagina {
     --background: none;
-    background: url('/assets/icon/backround.jpg');
+    background: url('/assets/icon/fond.png');
     min-height: 100vh;
 }
 
@@ -42,7 +42,8 @@ ion-content.mi-pagina {
 @media screen and (max-width: 1000px) {
     ion-content.mi-pagina {
         --background: none;
-        background: url('/assets/icon/backround.jpg');
+        background-image: url('/assets/icon/fond.png');
+        background-size: cover;
         min-height: 100vh;
     }
 
