@@ -20,9 +20,9 @@
       <p><strong>Email:</strong> {{customerData?.email}}</p>
       <p><strong>Teléfono:</strong> {{customerData?.phone}}</p>
 
-      <ion-button expand="full" routerLink="/tab2">Editar mi perfil</ion-button>
-      <ion-button expand="full" routerLink="/tab3">Cambiar mi Contraseña</ion-button>
-        <ion-button id="present-alert" expand="full">Eliminar cuenta</ion-button> <!--(click)="deleteProfile()-->
+      <ion-button routerLink="/tab2">Editar mi perfil</ion-button>
+      <ion-button routerLink="/tab3">Cambiar mi Contraseña</ion-button>
+        <ion-button color="danger" id="present-alert">Eliminar cuenta</ion-button> <!--(click)="deleteProfile()-->
 <ion-alert
   trigger="present-alert"
   header="¿Estas seguro que deseas eliminar tu cuenta?"

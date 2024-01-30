@@ -41,8 +41,9 @@ ion-button {
         min-height: 100vh;
     }
 
+
     ion-header {
-        background: #635875; /* Ajusta según sea necesario */
+        background: #6a15f1; 
     }
 
     ion-toolbar {
@@ -51,11 +52,21 @@ ion-button {
     }
 
     ion-card {
-        background: #635875; /* Ajusta según sea necesario */
-        margin: 10%; /* Ajusta según sea necesario */
+        background: rgba(250, 247, 255, 0.5);
+        margin: 10%; 
         padding: 30px;
         margin-top: 40%;
     }
+
+    //Informacion
+    ion-card-title{
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+    }
+    p{
+        color: black;
+    }
+
 
     ion-card-header {
         text-align: center; /* Centra el título */

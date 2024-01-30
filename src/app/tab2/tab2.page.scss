@@ -1,6 +1,6 @@
 /* Estilos para pantallas de ordenador */
 ion-header {
-    background: #635875; /* Ajusta según sea necesario */
+    background: #635875; 
 }
 
 ion-toolbar {
@@ -15,14 +15,14 @@ ion-content {
 }
 
 form {
-    background: #635875; /* Ajusta según sea necesario */
+    background: #635875; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 15%; /* Ajusta según sea necesario */
+    margin-top: 15%; 
     width: 100vh;
-    height: 60%; /* Ajusta según sea necesario */
+    height: 60%; 
     padding: 30px;
 }
 
@@ -48,13 +48,15 @@ ion-button {
 
     ion-content {
         --background: none;
-        background: url('/assets/icon/backround.jpg');
+        background: url('/assets/icon/fond_2.jpeg');
+        background-size: cover;
         min-height: 100vh;
     }
 
     form {
-        background: #635875; /* Ajusta según sea necesario */
+        background: rgba(0, 0, 0, 0.5); 
         display: flex;
+        font-family: Arial, Helvetica, sans-serif;
         flex-direction: column;
         align-items: center;
         justify-content: center;

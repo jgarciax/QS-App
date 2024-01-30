@@ -1,6 +1,6 @@
 /* Estilos para pantallas de ordenador */
 ion-header {
-    background: #635875; /* Ajusta según sea necesario */
+    background: #635875; 
 }
 
 ion-toolbar {
@@ -10,19 +10,19 @@ ion-toolbar {
 
 ion-content {
     --background: none;
-    background: url('/assets/icon/backround.jpg');
+    background: url('/assets/icon/fond.png');
     min-height: 100vh;
 }
 
 form {
-    background: #635875; /* Ajusta según sea necesario */
+    background: #635875; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 15%; /* Ajusta según sea necesario */
+    margin-top: 15%; 
     width: 100vh;
-    height: 60%; /* Ajusta según sea necesario */
+    height: 60%; 
     padding: 30px;
 }
 
@@ -38,7 +38,7 @@ ion-button {
 /* Estilos para pantallas de dispositivos móviles */
 @media screen and (max-width: 1000px) {
     ion-header {
-        background: #635875; /* Ajusta según sea necesario */
+        background: #635875; 
     }
 
     ion-toolbar {
@@ -48,12 +48,13 @@ ion-button {
 
     ion-content {
         --background: none;
-        background: url('/assets/icon/backround.jpg');
+        background: url('/assets/icon/fond.png');
+        background-size: cover;
         min-height: 100vh;
     }
 
     form {
-        background: #635875; /* Ajusta según sea necesario */
+        background: rgba(250, 247, 255, 0.5); 
         display: flex;
         flex-direction: column;
         align-items: center;

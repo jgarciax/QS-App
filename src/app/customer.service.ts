@@ -32,6 +32,11 @@ export class CustomerService {
     return this.http.post(`${this.baseUrl}/customer/login`, customerData);
   }
 
+  isLoggedIn(): boolean {
+    const token = this.getToken();
+    return !!token;
+  }
+
   setToken(token: string) {
     localStorage.setItem('token', token);
   }

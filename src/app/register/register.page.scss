@@ -30,24 +30,31 @@ ion-content.mi-pagina {
 @media screen and (max-width: 1000px) {
     ion-content.mi-pagina {
         --background: none;
-        background: url('/assets/icon/backround.jpg');
+        background: url('/assets/icon/fond.png');
+        background-size: cover;
         min-height: 100vh;
     }
 
     .register-form {
-        background: #635875;
+        background: rgba(250, 247, 255, 0.5);
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 50%;
+        align-items: center; /* Centra los elementos horizontalmente */
+        justify-content: center; /* Centra los elementos verticalmente */
+        margin-top: 15%;
         width: 100%;
-        height: 50%;
-        padding: 30px;
+        height: 70vh;
+        padding: 80px;
     }
-
+    
     .register-item {
         margin-bottom: 10px;
+        width: 100%; /* Asegura que los inputs tomen todo el ancho disponible */
+    }
+    
+
+    img{
+        margin-top: 10%;
     }
 
     .register-button {

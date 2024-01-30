@@ -1,13 +1,16 @@
 <ion-menu contentId="main-content">
   <ion-header>
     <ion-toolbar color="#F7819F">
-      <ion-title>Menu Content</ion-title>
+      <ion-title>Options</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">This is the menu content.
     <p></p>
-    <a routerLink="/tab2" >Editar perfil</a> <p></p><p></p>
-    <a routerLink="/tab3" >Editar mi Contraseña</a>
+    <ul>
+      <li routerLink="/tab2"><span>Edit Profile</span></li>
+      <li routerLink="/tab3"><span>Edit Password</span></li>
+      <li routerLink="/login"><span>Logout</span></li>
+    </ul>
   </ion-content>
 
 </ion-menu>
