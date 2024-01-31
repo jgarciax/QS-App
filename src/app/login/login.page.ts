@@ -40,8 +40,9 @@ export class LoginPage {
         }
       },
       (error) => {
+        
         console.error('Error:', error);
-        this.isAlertOpen = true;
+        
       }
     );
   }

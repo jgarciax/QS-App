@@ -68,6 +68,15 @@ ion-button {
     }
 
 
+    ion-img{
+        height: 5vh;
+        margin-top: 10vh;
+        margin-left: -30vh;
+        width: 75vh;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+
     ion-card-header {
         text-align: center; /* Centra el título */
     }

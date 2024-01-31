@@ -24,7 +24,7 @@ export class ProfilePage {
       role: 'confirm',
       handler: () => {
         console.log('Alert confirmed');
-        this.deleteProfile()
+        this.deleteProfile();
       },
     },
   ];
@@ -36,7 +36,7 @@ export class ProfilePage {
 
   constructor(private customerService: CustomerService, private router: Router) {
     this.getCustomerInfo();
-    this.deleteProfile
+    //Al intentar llamar la funcion de eliminar no es recomendable
   }
 
   getCustomerInfo() {

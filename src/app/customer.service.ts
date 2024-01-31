@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 interface CustomerData {
   email: string;
@@ -12,7 +13,7 @@ interface CustomerData {
 export class CustomerService {
   private baseUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   getCustomers() {
     return this.http.get(`${this.baseUrl}/customer`);
@@ -36,6 +37,11 @@ export class CustomerService {
     const token = this.getToken();
     return !!token;
   }
+
+  logout() {
+    localStorage.removeItem('token');
+  }
+
 
   setToken(token: string) {
     localStorage.setItem('token', token);

@@ -1,15 +1,15 @@
 <ion-content class="mi-pagina">
   <img class="log" src="/assets/icon/logo-quick.png" alt="">
   <form class="login-form" (ngSubmit)="loginCustomer()">
-    <ion-item class="login-item">
-      <ion-input labelPlacement="floating" [(ngModel)]="customerData.email" name="email">
-        <div slot="label">Email <ion-text color="danger">(Required)</ion-text></div>
+    <ion-item color="Medio" class="login-item">
+      <ion-input  class="inputs" labelPlacement="floating" [(ngModel)]="customerData.email" name="email">
+        <div slot="label">Email <ion-text color="danger"> *</ion-text></div>
       </ion-input>
-    </ion-item>
+    </ion-item><p></p>
     
-    <ion-item class="login-item">
+    <ion-item color="Medio" class="login-item">
       <ion-input labelPlacement="floating" [(ngModel)]="customerData.password" name="password" type="password">
-        <div slot="label">Password <ion-text color="danger">(Required)</ion-text></div>
+        <div slot="label">Password <ion-text color="danger"> *</ion-text></div>
       </ion-input>
     </ion-item>
     <ion-button expand="block" type="submit" (click)="setOpen(false)">Login</ion-button>

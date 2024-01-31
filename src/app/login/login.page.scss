@@ -49,25 +49,32 @@ ion-content.mi-pagina {
 
     .log {
         height: 12vh;
-        margin-top: 6%;
+        margin-top: 15%;
         position: absolute;
         width: 50%;
     }
 
+
     .login-form {
-        background: rgba(250, 247, 255, 0.5); /* El último valor es la opacidad.*/
+        background: rgba(250, 247, 255, 0.7); /* El último valor es la opacidad.*/
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-top: 50%;
-        width: 100%;
+        margin-top: 55%;
+        width: 90%;
+        margin-left: 4%;
+        border-radius: 20%;
         height: 50%;
         padding: 30px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     }
     
 
     .login-item {
+
+        color: black;
+        font-size: 20px;
         margin-bottom: 10px;
         width: 35vh;
         height: 7vh;

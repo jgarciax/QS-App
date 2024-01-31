@@ -8,7 +8,14 @@ import { CustomerService } from '../customer.service'; // Asegúrate de importar
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage {
-  alertButtons = ['Action'];
+
+  isAlertOpen = false;
+  alertButtons = ['Acept'];
+
+  setOpen(isOpen: boolean) {
+    this.isAlertOpen = isOpen;
+  }
+
   customerData = {
     name: '',
     surname: '',
@@ -28,6 +35,7 @@ export class RegisterPage {
       },
       (error) => {
         console.error('Error:', error);
+        this.isAlertOpen = true;
       }
     );
   }

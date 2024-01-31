@@ -8,23 +8,27 @@ import { CustomerService } from '../customer.service';
 
 })
 export class Tab1Page {
-  alertButtons = ['Action'];
-  customerData: any;
+  packageData: any;
 
   constructor(private customerService: CustomerService) {
-    this.customerInfo()
+    this.getPackageInfo();
   }
 
-  customerInfo() {
-    this.customerService.getCustomerInfo().subscribe(
+  getPackageInfo() {
+    this.customerService.getPackages().subscribe(
       (data) => {
-        this.customerData = data;
-        console.log('Packages obtained!')
+        if (data && Array.isArray(data) && data.length > 0) {
+          this.packageData = data;
+          console.log('Packages obtained!', data)
+        } else {
+          this.packageData = [];
+          console.log('Sin paquetes')
+        }
       },
       (error) => {
-        console.log('Client without packages😮 💨', error)
+        console.log('Error:', error)
       }
     )
   }
+}  
 
-}

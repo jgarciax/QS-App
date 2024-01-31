@@ -4,7 +4,7 @@
       <ion-title>Options</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding">This is the menu content.
+  <ion-content class="ion-padding">
     <p></p>
     <ul>
       <li routerLink="/tab2"><span>Edit Profile</span></li>
@@ -20,11 +20,10 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
   
-    <ion-title>Packages</ion-title>
+    <ion-title class="titulo">Packages</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  
   <div>
     <ion-img routerLink="/profile" src="../../assets/icon/profile.png"></ion-img>
   </div>
@@ -32,15 +31,28 @@
   <ion-card>
     <ion-header>
       <ion-card-header>
-        <ion-title size="large">Packages available</ion-title>
+        <ion-title size="large">Packages</ion-title>
       </ion-card-header>
     </ion-header>
-
+  
     <ion-card-content>
-      <p><strong>id:</strong> {{customerData?.id}}</p>
-      <p><strong>Tracking:</strong> {{customerData?.tracking}}</p>
-      <p><strong>Weight:</strong> {{customerData?.weight}}</p>
-      <p><strong>Description:</strong> {{customerData?.description}}</p>
+      <div *ngIf="packageData && packageData.length > 0; else noPackages"><!--agrega al elemento DOM la info de packages-->
+        <p *ngFor="let package of packageData">
+          <strong>Tracking:</strong> {{package?.tracking}}
+
+          <strong>Weight:</strong> {{package?.weight}}
+          <strong>Description:</strong> {{package?.description}}
+        </p>
+        
+      </div>
+
+      <ng-template #noPackages>
+        <p>Sin paquetes</p>
+      </ng-template>
     </ion-card-content>
   </ion-card>
 </ion-content>
+
+
+
+  

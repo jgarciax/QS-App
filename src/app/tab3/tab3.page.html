@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title class="titulo">
       Actualizar mi Contraseña
     </ion-title>
   </ion-toolbar>
@@ -8,21 +8,26 @@
 
 <ion-content [fullscreen]="true">
   <form (ngSubmit)="updatePassword()">
-  <ion-item>
+    <ion-img class="candado" src="../../assets/icon/candado.png"></ion-img> <p></p>
+  <ion-item color="Medium">
     <ion-label>Enter old Password</ion-label>
     <ion-input [(ngModel)]="updateData.before" name="before" type="Password"></ion-input>
   </ion-item>
-  <ion-item>
+  <ion-item color="Medium">
     <ion-label>Enter new Password</ion-label>
       <ion-input [(ngModel)]="updateData.after" name="after" type="password"></ion-input>
   </ion-item>
-  <ion-button id="present-alert" expand="full" type="submit">Actualizar Contraseña</ion-button>
+  <ion-button routerLink="/tab1" id="present-alert" expand="blog" type="submit">Actualizar Contraseña</ion-button>
   <ion-alert
   trigger="present-alert"
   header="exito😃!"
   message="Contraseña Actualizada!✅"
   [buttons]="alertButtons"
 ></ion-alert>
-</form>
 
+
+</form>
+<div>
+  <ion-img routerLink="/tab1" src="../../assets/icon/flecha.png"></ion-img>
+</div>
 </ion-content>
