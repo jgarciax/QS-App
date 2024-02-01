@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CustomerService } from '../customer.service'; // Asegúrate de importar tu servicio
+import { CustomerService } from '../customer.service'; 
 
 @Component({
   selector: 'app-register',
@@ -24,6 +24,7 @@ export class RegisterPage {
     phone: '',
     password: ''
   };
+  
 
   constructor(private customerService: CustomerService, private router: Router) { }
 

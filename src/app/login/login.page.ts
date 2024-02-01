@@ -22,6 +22,8 @@ export class LoginPage {
     password: ''
   };
   
+
+  
   constructor(private customerService: CustomerService, private router: Router) { }
 
   loginCustomer() {
