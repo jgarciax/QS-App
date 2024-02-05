@@ -1,5 +1,7 @@
 {
   "name": "qs_app",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

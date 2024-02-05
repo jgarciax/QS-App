@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerService } from '../customer.service'; 
-import { FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -11,33 +11,20 @@ import { FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/
 export class RegisterPage {
 
   isAlertOpen = false;
+  showPassword = false;
   alertButtons = ['Acept'];
 
   setOpen(isOpen: boolean) {
     this.isAlertOpen = isOpen;
   }
 
-  customerData = {
-    name: '',
-    surname: '',
-    code: '',
-    email: '',
-    phone: '',
-    password: ''
-  };
-  
-  emailError = false;
-  phoneError = false;
-
-  validateEmail(email: string) {
-    const re = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-    this.emailError = !re.test(email);
-  }
-
-  validatePhone(phone: string) {
-    const valid = /^\d{8}$/.test(phone);
-    this.phoneError = !valid;
-  }
+  customerForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    surname: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', [Validators.required, Validators.pattern(/^\d{8}$/)]),
+    password: new FormControl('', Validators.required)
+  });
 
   constructor(private customerService: CustomerService, private router: Router) { }
 
@@ -52,15 +39,22 @@ export class RegisterPage {
   }
 
   registerCustomer() {
-    if (this.emailError || this.phoneError) {
+    if (this.customerForm.invalid) {
       this.isAlertOpen = true;
       return;
     }
 
     // Genera un código aleatorio y lo asigna al campo 'code'
-    this.customerData.code = this.generateCode();
-
-    this.customerService.registerCustomer(this.customerData).subscribe(
+    const customerData = {
+      name: this.customerForm.value.name ?? '',
+      surname: this.customerForm.value.surname ?? '',
+      email: this.customerForm.value.email ?? '',
+      phone: this.customerForm.value.phone ?? '',
+      password: this.customerForm.value.password ?? '',
+      code: this.generateCode()
+    };
+    
+    this.customerService.registerCustomer(customerData).subscribe(
       (data) => {
         console.log(data);
         this.router.navigateByUrl('/login'); // redirige a la página de inicio de sesión

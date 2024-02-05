@@ -1,42 +1,41 @@
 <ion-content class="mi-pagina">
   <img class="log" src="/assets/icon/logo-quick.png" alt="">
-  <form class="register-form" (ngSubmit)="registerCustomer()">
+  <form [formGroup]="customerForm" (ngSubmit)="registerCustomer()" class="register-form">
     <ion-item color="Medio" class="login-item">
-      <ion-input class="inputs" labelPlacement="floating" [(ngModel)]="customerData.name" name="name">
+      <ion-input class="inputs" labelPlacement="floating" formControlName="name">
         <div slot="label">Name <ion-text color="danger"> *</ion-text></div>
       </ion-input>
     </ion-item>
     <ion-item color="Medio" class="login-item">
-      <ion-input class="inputs" labelPlacement="floating" [(ngModel)]="customerData.surname" name="surname">
+      <ion-input class="inputs" labelPlacement="floating" formControlName="surname">
         <div slot="label">Surname <ion-text color="danger"> *</ion-text></div>
       </ion-input>
     </ion-item>
-
-    <div>
     <ion-item color="Medio" class="email-field">
       <ion-label position="floating">Email <ion-text color="danger"> *</ion-text></ion-label>
-      <ion-input [(ngModel)]="customerData.email" name="email" (ngModelChange)="validateEmail($event)"></ion-input>
-      <div *ngIf="emailError" class="email-error">
+      <ion-input formControlName="email"></ion-input>
+      <div *ngIf="customerForm?.get('email')?.invalid && customerForm?.get('email')?.touched" class="email-error">
         Correo electrónico inválido. 
       </div>
     </ion-item>
-  </div>
-  <ion-item color="Medio" class="phone-field">
-    <ion-label position="floating">Phone <ion-text color="danger"> *</ion-text></ion-label>
-    <ion-input [(ngModel)]="customerData.phone" name="phone" (ngModelChange)="validatePhone($event)"></ion-input>
-    <div *ngIf="phoneError" class="phone-error">
-      Debe tener exactamente 8 dígitos
-    </div>
-  </ion-item>
-  
-  
-    <ion-item color="Medio">
-      <ion-input class="inputs" labelPlacement="floating" [(ngModel)]="customerData.password" name="password">
-        <div slot="label">Password <ion-text color="danger"> *</ion-text></div>
-      </ion-input>
+    <ion-item color="Medio" class="phone-field">
+      <ion-label position="floating">Phone <ion-text color="danger"> *</ion-text></ion-label>
+      <ion-input formControlName="phone"></ion-input>
+      <div *ngIf="customerForm?.get('phone')?.invalid && customerForm?.get('phone')?.touched" class="phone-error">
+        Debe tener exactamente 8 dígitos
+      </div>
     </ion-item>
+    <ion-item color="Medio">
+      <ion-label position="floating">Password <ion-text color="danger"> *</ion-text></ion-label>
+      <ion-input class="inputs" [type]="showPassword ? 'text' : 'password'" formControlName="password"></ion-input>
+      <ion-button fill="clear" slot="end" (click)="showPassword = !showPassword" class="eye-button">
+        <ion-icon [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+      </ion-button>
+    </ion-item>
+    
+    
     <p></p>
-    <ion-button expand="block" type="submit" (click)="setOpen(false)">Register</ion-button>
+    <ion-button expand="block" type="submit" [disabled]="customerForm.invalid" (click)="setOpen(false)">Register</ion-button>
     
     <!--ALERT FROM LOGED-->
     <ion-alert
