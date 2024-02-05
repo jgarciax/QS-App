@@ -23,6 +23,7 @@ export class Tab3Page {
         },
         (error) => {
           console.log('before Password incorrect!', error)
+          console.log('No se pudo actualizar la contraseña')
         }
       )
   }

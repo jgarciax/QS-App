@@ -46,22 +46,36 @@ ion-content.mi-pagina {
         width: 90%;
         border-radius: 5vh;
         height: 70vh;
-        padding: 80px;
+        padding: 10px;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     }
-    ion-item{
-        margin-bottom: -18.5px;
-        color: black;
-        font-size: 15px;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        font-size: 20px;
-        
-    }
-    
 
-    img{
-        margin-top: 10%;
+
+
+//Estilo para mensaje de error de validacion de email
+    ion-item.email-field {
+    position: relative;
+}
+
+
+    div.email-error {
+        opacity: 40vh;
+        opacity: 0.4;
+        color: red;
+
     }
+//Estilo para mensaje de error de validacion de phone
+    ion-item.phone-field {
+        position: relative;
+      }
+      
+      div.phone-error {
+        font-size: 14px;
+        opacity: 0.4; /* Ajusta este valor según tus necesidades */
+        color: red;
+      }
+      
+
 
     .register-button {
         width: 100%;

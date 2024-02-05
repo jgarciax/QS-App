@@ -11,23 +11,27 @@
         <div slot="label">Surname <ion-text color="danger"> *</ion-text></div>
       </ion-input>
     </ion-item>
-    <ion-item color="Medio" class="login-item">
-      <ion-input class="inputs" labelPlacement="floating" [(ngModel)]="customerData.code" name="code">
-        <div slot="label">Code <ion-text color="danger"> *</ion-text></div>
-      </ion-input>
+
+    <div>
+    <ion-item color="Medio" class="email-field">
+      <ion-label position="floating">Email <ion-text color="danger"> *</ion-text></ion-label>
+      <ion-input [(ngModel)]="customerData.email" name="email" (ngModelChange)="validateEmail($event)"></ion-input>
+      <div *ngIf="emailError" class="email-error">
+        Correo electrónico inválido. 
+      </div>
     </ion-item>
+  </div>
+  <ion-item color="Medio" class="phone-field">
+    <ion-label position="floating">Phone <ion-text color="danger"> *</ion-text></ion-label>
+    <ion-input [(ngModel)]="customerData.phone" name="phone" (ngModelChange)="validatePhone($event)"></ion-input>
+    <div *ngIf="phoneError" class="phone-error">
+      Debe tener exactamente 8 dígitos
+    </div>
+  </ion-item>
+  
+  
     <ion-item color="Medio">
-      <ion-input class="inputs" labelPlacement="floating" [(ngModel)]="customerData.email" name="email">
-        <div slot="label">Email <ion-text color="danger"> *</ion-text></div>
-      </ion-input>
-    </ion-item>
-    <ion-item color="Medio">
-      <ion-input class="inputs" labelPlacement="floating" [(ngModel)]="customerData.phone" name="phone">
-        <div slot="label">Phone <ion-text color="danger"> *</ion-text></div>
-      </ion-input>
-    </ion-item>
-    <ion-item color="Medio">
-      <ion-input class="inputs" labelPlacement="floating" [(ngModel)]="customerData.password" name="password" type="password">
+      <ion-input class="inputs" labelPlacement="floating" [(ngModel)]="customerData.password" name="password">
         <div slot="label">Password <ion-text color="danger"> *</ion-text></div>
       </ion-input>
     </ion-item>

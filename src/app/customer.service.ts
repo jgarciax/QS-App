@@ -73,11 +73,9 @@ export class CustomerService {
   }
   updatePassword(updateData: { before: string; after: string }) {
     const token = this.getToken();
-    const headers = new HttpHeaders().set('Autorization', `Bearer ${token}`);
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.put(
-      `${this.baseUrl}/customer/updatePassword`,
-      updateData,
-      { headers }
+      `${this.baseUrl}/customer/updatePassword`,updateData,{ headers }
     );
   }
   getPackages() {
