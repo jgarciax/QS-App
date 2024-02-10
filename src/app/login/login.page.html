@@ -12,7 +12,7 @@
         <div slot="label">Password <ion-text color="danger"> *</ion-text></div>
       </ion-input>
     </ion-item>
-    <ion-button expand="block" type="submit" (click)="setOpen(false)">Login</ion-button>
+    <ion-button id="button_log"  expand="block" type="submit" (click)="setOpen(false)">Login</ion-button>
 
     <ion-alert
       [isOpen]="isAlertOpen"
@@ -24,6 +24,6 @@
     ></ion-alert>
 
     <p class="register-prompt">¿No tienes una cuenta?</p>
-    <ion-button fill="outline"  routerLink="/register">Regístrate</ion-button>
+    <ion-button fill="outline" id="register_button" routerLink="/register">Regístrate</ion-button>
   </form>
 </ion-content>

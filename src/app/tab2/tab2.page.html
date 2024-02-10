@@ -11,7 +11,7 @@
   <form (ngSubmit)="updateProfile()">
     <ion-item color="Medium">
       <ion-label>Nombre</ion-label>
-      <ion-input [(ngModel)]="updateData.name" name="name" [value]="customerData?.name"></ion-input> <!--El value obtiene y muestra el dato en el input-->
+      <ion-input id="edit_nameç" [(ngModel)]="updateData.name" name="name" [value]="customerData?.name"></ion-input> <!--El value obtiene y muestra el dato en el input-->
     </ion-item>
     <ion-item color="Medium">
       <ion-label>Apellido</ion-label>
